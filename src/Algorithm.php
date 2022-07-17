@@ -72,7 +72,8 @@ function exercise_3 ($num1,$num2)
         else return "false";
     }
 }
-/* 6. Write a PHP program to remove the character in a given position of a given string. The given position will be in the range 0..string length -1 inclusive. Go to the editor
+/* 6. Write a PHP program to remove the character in a given position of a given string.
+The given position will be in the range 0..string length -1 inclusive.
 Sample Input:
 "Python", 1
 "Python", o
@@ -83,7 +84,8 @@ ython
 Pythn
 */
 echo "<br><br>------Exercise 6-----<br>";
-echo exercise_6("python",-2)."\n";
+echo exercise_6("python",-5)."<br>";
+echo exercise_6("python",5)."<br>";
 
 function exercise_6 ($word,$pos)
 {
@@ -114,4 +116,33 @@ function exercise_6 ($word,$pos)
     //$res = substr($word,$pos);
     return $res;
 }
+
+
+/* 7. Write a PHP program to exchange the first and last characters in a given string and return the new string.
+Sample Input:
+"abcd"
+"a"
+"xy"
+Sample output:
+dbca
+a
+yx
+*/
+
+echo "<br><br>------Exercise 7-----<br>";
+echo exercise_7("python")."<br>";
+echo exercise_7("pepe")."<br>";
+
+function exercise_7 ($word)
+{
+    $array= str_split($word);
+    $first_character = $array[0];
+    $last_position =  count($array) - 1 ;
+    $last_character = $array[$last_position];
+
+    $res = substr_replace($word,$last_character,0,1);
+    $res = substr_replace($res,$first_character,$last_position,1);
+    return $res;
+}
+
 
